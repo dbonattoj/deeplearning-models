@@ -73,7 +73,7 @@ A collection of various deep learning architectures, models, and tips for Tensor
 
 #### VGG
 
-- Convolutional Neural Network VGG-16   
+- Convolutional Neural Network VGG-16 Trained on CIFAR-10
 &nbsp;&nbsp; [TensorFlow 1: [GitHub](tensorflow1_ipynb/cnn/cnn-vgg16.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/tensorflow1_ipynb/cnn/cnn-vgg16.ipynb)]  
 &nbsp;&nbsp; [PyTorch: [GitHub](pytorch_ipynb/cnn/cnn-vgg16.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/pytorch_ipynb/cnn/cnn-vgg16.ipynb)]
 - VGG-16 Gender Classifier Trained on CelebA   
@@ -315,6 +315,12 @@ A collection of various deep learning architectures, models, and tips for Tensor
 &nbsp;&nbsp; [PyTorch: [GitHub](pytorch_ipynb/rnn/rnn_lstm_packed_own_csv_imdb.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/pytorch_ipynb/rnn/rnn_lstm_packed_own_csv_imdb.ipynb)]
 
 
+#### Improving Memory Efficiency
+
+- Gradient Checkpointing Demo (Network-in-Network trained on CIFAR-10)  
+&nbsp;&nbsp; [PyTorch: [GitHub](pytorch_ipynb/mechanics/gradient-checkpointing-nin.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/pytorch_ipynb/mechanics/gradient-checkpointing-nin.ipynb)]
+
+
 #### Parallel Computing
 
 - Using Multiple GPUs with DataParallel -- VGG-16 Gender Classifier on CelebA   
@@ -322,6 +328,8 @@ A collection of various deep learning architectures, models, and tips for Tensor
 
 #### Other 
 
+- PyTorch with and without Deterministic Behavior -- Runtime Benchmark  
+&nbsp;&nbsp; [PyTorch: [GitHub](pytorch_ipynb/mechanics/deterministic_benchmark.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/pytorch_ipynb/mechanics/pytorch_ipynb/mechanics/deterministic_benchmark.ipynb)]
 - Sequential API and hooks    
 &nbsp;&nbsp; [PyTorch: [GitHub](pytorch_ipynb/mechanics/mlp-sequential.ipynb) | [Nbviewer](https://nbviewer.jupyter.org/github/rasbt/deeplearning-models/blob/master/pytorch_ipynb/mechanics/mlp-sequential.ipynb)]
 - Weight Sharing Within a Layer    
