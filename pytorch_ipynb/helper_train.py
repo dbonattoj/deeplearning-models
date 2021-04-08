@@ -37,6 +37,8 @@ def train_classifier_simple_v1(num_epochs, model, optimizer, device,
 
             # FORWARD AND BACK PROP
             logits = model(features)
+            if isinstance(logits, torch.distributed.rpc.api.RRef):
+                logits = logits.local_value()
             loss = loss_fn(logits, targets)
             optimizer.zero_grad()
 
@@ -65,7 +67,7 @@ def train_classifier_simple_v1(num_epochs, model, optimizer, device,
                 print('***Epoch: %03d/%03d | Train. Acc.: %.3f%% | Loss: %.3f' % (
                       epoch+1, num_epochs, train_acc, train_loss))
                 log_dict['train_loss_per_epoch'].append(train_loss.item())
-                log_dict['train_loss_per_epoch'].append(train_acc.item())
+                log_dict['train_acc_per_epoch'].append(train_acc.item())
 
                 if valid_loader is not None:
                     valid_acc = compute_accuracy(model, valid_loader, device)
@@ -73,7 +75,7 @@ def train_classifier_simple_v1(num_epochs, model, optimizer, device,
                     print('***Epoch: %03d/%03d | Valid. Acc.: %.3f%% | Loss: %.3f' % (
                           epoch+1, num_epochs, valid_acc, valid_loss))
                     log_dict['valid_loss_per_epoch'].append(valid_loss.item())
-                    log_dict['valid_loss_per_epoch'].append(valid_acc.item())
+                    log_dict['valid_acc_per_epoch'].append(valid_acc.item())
 
         print('Time elapsed: %.2f min' % ((time.time() - start_time)/60))
 
